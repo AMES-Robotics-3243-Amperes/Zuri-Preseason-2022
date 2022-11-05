@@ -6,7 +6,9 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
+import frc.robot.commands.TeleopArmPivot;
 import frc.robot.commands.TeleopDriveTrain;
+import frc.robot.subsystems.ArmPivot;
 import frc.robot.subsystems.DriveTrain;
 import edu.wpi.first.wpilibj2.command.Command;
 
@@ -19,18 +21,22 @@ import edu.wpi.first.wpilibj2.command.Command;
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final DriveTrain m_driveTrainSubsystem = new DriveTrain();
+  private final ArmPivot m_armPivotSubsystem = new ArmPivot();
+
 
   XboxController primaryController = new XboxController(0);
 
   private final TeleopDriveTrain m_teleopDriveTrain = new TeleopDriveTrain(m_driveTrainSubsystem, primaryController);
+  private final TeleopArmPivot m_teleopArmPivot = new TeleopArmPivot(m_armPivotSubsystem, primaryController);
+  
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the button bindings
     configureButtonBindings();
 
-
     m_driveTrainSubsystem.setDefaultCommand( m_teleopDriveTrain );
+    m_armPivotSubsystem.setDefaultCommand( m_teleopArmPivot );
     
   }
 

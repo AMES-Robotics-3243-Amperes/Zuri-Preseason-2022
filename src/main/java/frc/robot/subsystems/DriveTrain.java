@@ -4,9 +4,11 @@
 
 package frc.robot.subsystems;
 
+import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
 import edu.wpi.first.wpilibj.drive.MecanumDrive.WheelSpeeds;
-import edu.wpi.first.wpilibj.motorcontrol.Spark;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
@@ -17,10 +19,10 @@ public class DriveTrain extends SubsystemBase {
 
   // H! Teleop Drive
   
-  Spark frontLeftMotor = new Spark( Constants.driveTrainIDFrontLeft );
-  Spark frontRightMotor = new Spark( Constants.driveTrainIDFrontRight );
-  Spark backLeftMotor = new Spark( Constants.driveTrainIDBackLeft );
-  Spark backRightMotor = new Spark( Constants.driveTrainIDBackRight );
+  CANSparkMax frontLeftMotor = new CANSparkMax( Constants.driveTrainIDFrontLeft, MotorType.kBrushless );
+  CANSparkMax frontRightMotor = new CANSparkMax( Constants.driveTrainIDFrontRight, MotorType.kBrushless );
+  CANSparkMax backLeftMotor = new CANSparkMax( Constants.driveTrainIDBackLeft, MotorType.kBrushless );
+  CANSparkMax backRightMotor = new CANSparkMax( Constants.driveTrainIDBackRight, MotorType.kBrushless );
 
   public void driveCartesian(double ySpeed, double xSpeed, double zRotation) {
     WheelSpeeds wheelSpeeds = MecanumDrive.driveCartesianIK(ySpeed, xSpeed, zRotation);

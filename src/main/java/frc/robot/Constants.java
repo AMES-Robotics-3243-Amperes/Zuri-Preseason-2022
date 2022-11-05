@@ -14,10 +14,21 @@ package frc.robot;
  */
 public final class Constants {
 
-    public static int driveTrainIDFrontRight = /*H! TODO*/ */;
-    public static int driveTrainIDFrontLeft = /*H! TODO*/ */;
-    public static int driveTrainIDBackRight = /*H! TODO*/ */;
-    public static int driveTrainIDBackLeft = /*H! TODO*/ */;
+    // H! Pivot subsystem
+    public static final int pivotIDMotor = 1; // H! #TODO Insert motor IDs
+
+    // H! Drive train subsystem
+    public static final int driveTrainIDFrontRight =  2;
+    public static final int driveTrainIDFrontLeft = 3;
+    public static final int driveTrainIDBackRight = 4;
+    public static final int driveTrainIDBackLeft = 5;
+
+
+
+    // H! Arm positions (in num rotations)
+    public static final double armPos0 = 0;
+    public static final double armPos1 = 30./360;
+    public static final double armPos2 = 60./360;
 
 
 
