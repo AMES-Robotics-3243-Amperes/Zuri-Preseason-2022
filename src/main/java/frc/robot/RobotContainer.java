@@ -56,6 +56,6 @@ public class RobotContainer {
   public Command getAutonomousCommand() {
     // An ExampleCommand will run in autonomous
     // H! IDK how you make this stop complaining
-    return m_autoCommand;
+    return null;
   }
 }

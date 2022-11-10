@@ -4,6 +4,7 @@
 
 package frc.robot.commands;
 
+import frc.robot.Constants;
 import frc.robot.subsystems.DriveTrain;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.CommandBase;
@@ -33,9 +34,9 @@ public class TeleopDriveTrain extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    double ySpeed = m_controller.getLeftY();
-    double xSpeed = m_controller.getLeftX();
-    double zRotation = m_controller.getRightX();
+    double ySpeed = m_controller.getLeftY() * Constants.driveSpeedMultiplier;
+    double xSpeed = m_controller.getLeftX() * Constants.driveSpeedMultiplier;
+    double zRotation = m_controller.getRightX() * Constants.driveSpeedMultiplier;
     m_driveTrainSubsystem.driveCartesian(ySpeed, xSpeed, zRotation);
   }
 

@@ -18,10 +18,10 @@ public final class Constants {
     public static final int pivotIDMotor = 1; // H! #TODO Insert motor IDs
 
     // H! Drive train subsystem
-    public static final int driveTrainIDFrontRight =  2;
-    public static final int driveTrainIDFrontLeft = 3;
-    public static final int driveTrainIDBackRight = 4;
-    public static final int driveTrainIDBackLeft = 5;
+    public static final int driveTrainIDFrontRight =  5;
+    public static final int driveTrainIDFrontLeft = 4;
+    public static final int driveTrainIDBackRight = 2;
+    public static final int driveTrainIDBackLeft = 3;
 
 
 
@@ -31,7 +31,8 @@ public final class Constants {
     public static final double armPos2 = 60./360;
 
 
-
+    // H! Drive speed multiplier
+    public static final double driveSpeedMultiplier = 0.25;
 
 
 

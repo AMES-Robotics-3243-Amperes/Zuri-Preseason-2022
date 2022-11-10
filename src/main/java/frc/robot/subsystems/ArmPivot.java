@@ -17,7 +17,7 @@ public class ArmPivot extends PIDSubsystem {
   public ArmPivot() {
     super(
         // The PIDController used by the subsystem
-        new PIDController(0, 0, 0)); // H! #TODO Calibrate PID
+        new PIDController(0.1, 0, 0)); // H! #TODO Calibrate PID
   }
 
 
