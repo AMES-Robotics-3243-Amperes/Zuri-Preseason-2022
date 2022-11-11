@@ -14,7 +14,12 @@ import frc.robot.Constants;
 
 public class DriveTrain extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
-  public DriveTrain() {}
+  public DriveTrain() {
+    frontRightMotor.setInverted(false);
+    backRightMotor.setInverted(false);
+    frontLeftMotor.setInverted(true);
+    backLeftMotor.setInverted(true);
+  }
 
 
   // H! Teleop Drive
@@ -24,8 +29,9 @@ public class DriveTrain extends SubsystemBase {
   CANSparkMax backLeftMotor = new CANSparkMax( Constants.driveTrainIDBackLeft, MotorType.kBrushless );
   CANSparkMax backRightMotor = new CANSparkMax( Constants.driveTrainIDBackRight, MotorType.kBrushless );
 
+
   public void driveCartesian(double ySpeed, double xSpeed, double zRotation) {
-    WheelSpeeds wheelSpeeds = MecanumDrive.driveCartesianIK(ySpeed, xSpeed, zRotation);
+    WheelSpeeds wheelSpeeds = MecanumDrive.driveCartesianIK(ySpeed, -xSpeed, zRotation);
 
     frontLeftMotor.set( wheelSpeeds.frontLeft );
     frontRightMotor.set( wheelSpeeds.frontRight );

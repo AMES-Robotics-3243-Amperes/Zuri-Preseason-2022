@@ -20,6 +20,7 @@ public class TeleopArmPivot extends CommandBase {
     m_armPivotSubsystem = armPivot;
     m_controller = controller;
     // Use addRequirements() here to declare subsystem dependencies.
+    addRequirements(armPivot);
   }
 
   // Called when the command is initially scheduled.
@@ -38,6 +39,9 @@ public class TeleopArmPivot extends CommandBase {
       m_armPivotSubsystem.setSetpoint( Constants.armPos2 );
     }
     
+    m_armPivotSubsystem.spinAtSpeed( -0.1 * m_controller.getLeftTriggerAxis() );
+    m_armPivotSubsystem.spinAtSpeed( 0.1 * m_controller.getRightTriggerAxis() );
+
   }
 
   // Called once the command ends or is interrupted.
