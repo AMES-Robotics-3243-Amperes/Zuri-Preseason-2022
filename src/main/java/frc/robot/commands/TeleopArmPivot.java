@@ -39,8 +39,8 @@ public class TeleopArmPivot extends CommandBase {
       m_armPivotSubsystem.setSetpoint( Constants.armPos2 );
     }
     
-    m_armPivotSubsystem.spinAtSpeed( -0.1 * m_controller.getLeftTriggerAxis() );
-    m_armPivotSubsystem.spinAtSpeed( 0.1 * m_controller.getRightTriggerAxis() );
+    // H! This is kinda terrible code quality, but it was easy
+    m_armPivotSubsystem.spinAtSpeed( 0.1 * m_controller.getRightTriggerAxis()  +  -0.1 * m_controller.getLeftTriggerAxis() );
 
   }
 
