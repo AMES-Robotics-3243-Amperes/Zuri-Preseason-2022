@@ -40,7 +40,7 @@ public class TeleopArmPivot extends CommandBase {
     }
     
     // H! This is kinda terrible code quality, but it was easy
-    m_armPivotSubsystem.spinAtSpeed( 0.1 * m_controller.getRightTriggerAxis()  +  -0.1 * m_controller.getLeftTriggerAxis() );
+    m_armPivotSubsystem.spinAtSpeed( Constants.manualArmSpeedMultiplier * ( m_controller.getRightTriggerAxis() - m_controller.getLeftTriggerAxis() ));
 
   }
 

@@ -35,6 +35,10 @@ public final class Constants {
     public static final double driveSpeedMultiplier = 0.25;
 
 
+    // H! Manual arm rotation speed multiplier
+    public static final double manualArmSpeedMultiplier = 0.1;
+
+
 
 
 }
