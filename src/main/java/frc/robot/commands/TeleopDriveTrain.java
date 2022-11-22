@@ -36,7 +36,7 @@ public class TeleopDriveTrain extends CommandBase {
   public void execute() {
     double ySpeed = m_controller.getLeftY() * Constants.driveSpeedMultiplier;
     double xSpeed = m_controller.getLeftX() * Constants.driveSpeedMultiplier;
-    double zRotation = m_controller.getRightX() * Constants.driveSpeedMultiplier;
+    double zRotation = m_controller.getRightX() * Constants.turnSpeedMultiplier;
     m_driveTrainSubsystem.driveCartesian(ySpeed, xSpeed, zRotation);
   }
 
