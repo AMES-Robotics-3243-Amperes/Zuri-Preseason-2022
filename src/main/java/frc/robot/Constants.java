@@ -35,6 +35,11 @@ public final class Constants {
     public static final double driveSpeedMultiplier = 0.5;
     public static final double turnSpeedMultiplier = -0.2;
 
+    // H! Slowmode speed multiplier
+    public static final double slowmodeForwardDriveSpeedMultiplier = 0.1;
+    public static final double slowmodeSideDriveSpeedMultiplier = 0.15;
+    public static final double slowmodeTurnSpeedMultiplier = 0.3;
+
 
     // H! Manual arm rotation speed multiplier
     public static final double manualArmSpeedMultiplier = 0.1;
