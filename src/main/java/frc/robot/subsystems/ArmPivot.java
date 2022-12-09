@@ -5,6 +5,7 @@
 package frc.robot.subsystems;
 
 import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkMax.IdleMode;
 import com.revrobotics.RelativeEncoder;
 
 import edu.wpi.first.math.MathUtil;
@@ -18,6 +19,7 @@ public class ArmPivot extends PIDSubsystem {
     super(
         // The PIDController used by the subsystem
         new PIDController(0.1, 0, 0)); // H! #TODO Calibrate PID
+        this.pivotMotor.setIdleMode( IdleMode.fromId(1) );
   }
 
 
@@ -30,6 +32,10 @@ public class ArmPivot extends PIDSubsystem {
   public void spinAtSpeed(double speed) {
     pivotMotor.set(speed);
   }
+  /*
+  public void brake() {
+    pivotMotor.stop;
+  }*/
 
 
 
